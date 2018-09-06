@@ -6,15 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://stormdony.github.io">
-  <title>DonLex的博客 | DonLex&#39;s Blog</title>
+  <title>爬虫利器-cURL转换 | DonLex的博客 | DonLex&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="DonLex的博客 | DonLex&#39;s Blog">
-<meta property="og:url" content="https://stormdony.github.io/index.html">
+  <meta name="description" content="前言在爬虫的过程，经常需要为程序添加请求头，参数，cookie等信息，但是这些信息的添加都需要手动的去浏览器中找，然后一点一点的慢慢复制粘贴，这样效率就非常的低了。今天就分享一个网站，解决这些问题，让你脱离这些没有意义的劳动 网站介绍网址: https://curl.trillworks.com  从上图可以看到网站的教程，只要根据教程三步走，就可以快速的添加相应的请求信息 示范 将需要爬取的请求">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="爬虫利器-cURL转换">
+<meta property="og:url" content="https://stormdony.github.io/2018/09/06/爬虫利器-cURL转换/index.html">
 <meta property="og:site_name" content="DonLex的博客 | DonLex&#39;s Blog">
+<meta property="og:description" content="前言在爬虫的过程，经常需要为程序添加请求头，参数，cookie等信息，但是这些信息的添加都需要手动的去浏览器中找，然后一点一点的慢慢复制粘贴，这样效率就非常的低了。今天就分享一个网站，解决这些问题，让你脱离这些没有意义的劳动 网站介绍网址: https://curl.trillworks.com  从上图可以看到网站的教程，只要根据教程三步走，就可以快速的添加相应的请求信息 示范 将需要爬取的请求">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://wx1.sinaimg.cn/mw690/0060lm7Tly1fuzn5f2wc2j30wi0hpq5v.jpg">
+<meta property="og:image" content="https://i.loli.net/2018/09/06/5b909ad7cdda7.gif">
+<meta property="og:updated_time" content="2018-09-06T03:55:54.566Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DonLex的博客 | DonLex&#39;s Blog">
+<meta name="twitter:title" content="爬虫利器-cURL转换">
+<meta name="twitter:description" content="前言在爬虫的过程，经常需要为程序添加请求头，参数，cookie等信息，但是这些信息的添加都需要手动的去浏览器中找，然后一点一点的慢慢复制粘贴，这样效率就非常的低了。今天就分享一个网站，解决这些问题，让你脱离这些没有意义的劳动 网站介绍网址: https://curl.trillworks.com  从上图可以看到网站的教程，只要根据教程三步走，就可以快速的添加相应的请求信息 示范 将需要爬取的请求">
+<meta name="twitter:image" content="http://wx1.sinaimg.cn/mw690/0060lm7Tly1fuzn5f2wc2j30wi0hpq5v.jpg">
   
     <link rel="alternative" href="/atom.xml" title="DonLex的博客 | DonLex&#39;s Blog" type="application/atom+xml">
   
@@ -141,16 +149,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-爬虫利器-cURL转换" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-爬虫利器-cURL转换" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/06/爬虫利器-cURL转换/">爬虫利器-cURL转换</a>
+    <h1 class="article-title" itemprop="name">
+      爬虫利器-cURL转换
     </h1>
   
 
@@ -206,10 +212,73 @@
       
 
       
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://stormdony.github.io/2018/09/06/爬虫利器-cURL转换/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2018/09/05/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -224,72 +293,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/05/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2018/09/05/hello-world/" class="archive-article-date">
-  	<time datetime="2018-09-05T02:26:45.363Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to the <strong>DonLex’s blog</strong>. This blog has just been established, so there is few pages, it will be improved gradually.<br>If you get any problems, you can send an E-mail to  <a href="mailto:stormdony@foxmail.com" target="_blank" rel="noopener">stormdony@foxmail.com</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网站介绍"><span class="toc-number">2.</span> <span class="toc-text">网站介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#示范"><span class="toc-number">3.</span> <span class="toc-text">示范</span></a></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
+  
+  
+  
 
   
+
+  
+
   
 
 
@@ -313,8 +342,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
