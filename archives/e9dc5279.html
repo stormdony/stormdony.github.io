@@ -83,18 +83,18 @@
 
 
 
-<meta name="description" content="添加看板娘在博客目录下安装依赖  npm install –save hexo-helper-live2d">
+<meta name="description" content="1.安装 hexo-wordcount在博客目录下打开Git Bash Here 输入命令  npm i –save hexo-wordcount">
 <meta name="keywords" content="hexo,yilia">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo添加和取消live2d看板动画">
-<meta property="og:url" content="https://www.donlex.cn/2018/09/09/hexo添加和取消live2d看板动画/index.html">
+<meta property="og:title" content="hexo下yilia主题添加字数统计和阅读时长功能">
+<meta property="og:url" content="https://www.donlex.cn/archives/e9dc5279.html">
 <meta property="og:site_name" content="Don Lex">
-<meta property="og:description" content="添加看板娘在博客目录下安装依赖  npm install –save hexo-helper-live2d">
+<meta property="og:description" content="1.安装 hexo-wordcount在博客目录下打开Git Bash Here 输入命令  npm i –save hexo-wordcount">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-09T08:06:32.178Z">
+<meta property="og:updated_time" content="2018-09-09T08:12:05.506Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo添加和取消live2d看板动画">
-<meta name="twitter:description" content="添加看板娘在博客目录下安装依赖  npm install –save hexo-helper-live2d">
+<meta name="twitter:title" content="hexo下yilia主题添加字数统计和阅读时长功能">
+<meta name="twitter:description" content="1.安装 hexo-wordcount在博客目录下打开Git Bash Here 输入命令  npm i –save hexo-wordcount">
 
 
 
@@ -124,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="https://www.donlex.cn/2018/09/09/hexo添加和取消live2d看板动画/"/>
+  <link rel="canonical" href="https://www.donlex.cn/archives/e9dc5279.html"/>
 
 
 
 
 
-  <title>hexo添加和取消live2d看板动画 | Don Lex</title>
+  <title>hexo下yilia主题添加字数统计和阅读时长功能 | Don Lex</title>
   
 
 
@@ -312,7 +312,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.donlex.cn/2018/09/09/hexo添加和取消live2d看板动画/">
+    <link itemprop="mainEntityOfPage" href="https://www.donlex.cn/archives/e9dc5279.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Don Lex">
@@ -329,7 +329,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hexo添加和取消live2d看板动画</h1>
+          <h1 class="post-title" itemprop="name headline">hexo下yilia主题添加字数统计和阅读时长功能</h1>
         
 
         <div class="post-meta">
@@ -341,7 +341,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-09T14:31:09+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-09T15:56:34+08:00">
                 2018-09-09
               </time>
             
@@ -400,7 +400,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  201
+                  344
                 </span>
               
 
@@ -437,26 +437,15 @@
       
 
       
-        <h3 id="添加看板娘"><a href="#添加看板娘" class="headerlink" title="添加看板娘"></a>添加看板娘</h3><p>在博客目录下安装依赖</p>
+        <h4 id="1-安装-hexo-wordcount"><a href="#1-安装-hexo-wordcount" class="headerlink" title="1.安装 hexo-wordcount"></a>1.安装 hexo-wordcount</h4><p>在博客目录下打开Git Bash Here 输入命令</p>
 <blockquote>
-<p>npm install –save hexo-helper-live2d</p>
+<p>npm i –save hexo-wordcount</p>
 </blockquote>
 <a id="more"></a>
-<p>在主题下的<code>_config.yml</code>的配置信息<br>Hexo的 _config.yml 文件添加配置.</p>
-<p>示例:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">live2d:</span><br><span class="line">  enable: true</span><br><span class="line">  scriptFrom: local</span><br><span class="line">  pluginRootPath: live2dw/</span><br><span class="line">  pluginJsPath: lib/</span><br><span class="line">  pluginModelPath: assets/</span><br><span class="line">  tagMode: false</span><br><span class="line">  debug: false</span><br><span class="line">  model:</span><br><span class="line">    use: live2d-widget-model-wanko</span><br><span class="line">  display:</span><br><span class="line">    position: right</span><br><span class="line">    width: <span class="number">150</span></span><br><span class="line">    height: <span class="number">300</span></span><br><span class="line">  mobile:</span><br><span class="line">    show: false</span><br></pre></td></tr></table></figure></p>
-<p>使用其他的模型，需要先安装模型,在修改配置信息中的<code>use</code></p>
-<p>查看模型：<a href="https://github.com/xiazeyu/live2d-widget-models" target="_blank" rel="noopener">https://github.com/xiazeyu/live2d-widget-models</a></p>
-<p>截图预览：<a href="https://huaji8.top/post/live2d-plugin-2.0/" target="_blank" rel="noopener">https://huaji8.top/post/live2d-plugin-2.0/</a></p>
-<p>安装模型</p>
-<blockquote>
-<p>npm install 模型的包名</p>
-</blockquote>
-<p>具体可以查看官方文档：<a href="https://github.com/EYHN/hexo-helper-live2d/blob/master/README.zh-CN.md" target="_blank" rel="noopener">https://github.com/EYHN/hexo-helper-live2d/blob/master/README.zh-CN.md</a></p>
-<h3 id="取消看板娘"><a href="#取消看板娘" class="headerlink" title="取消看板娘"></a>取消看板娘</h3><p>直接运行下面的命令</p>
-<blockquote>
-<p>npm uninstall hexo-helper-live2d</p>
-</blockquote>
-<p>去掉站点<code>_config.yml</code>下的配置信息即可</p>
+<h4 id="2-文件配置"><a href="#2-文件配置" class="headerlink" title="2.文件配置"></a>2.文件配置</h4><p>在<code>theme\yilia\layout\_partial\post</code>下创建<code>word.ejs</code>文件：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"margin-top:10px;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-time"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-meta-item-icon"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-keyboard-o"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-meta-item-text"</span>&gt;</span>  字数统计: <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-count"</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">wordcount</span>(<span class="attr">post.content</span>) %&gt;</span>字<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-time"</span>&gt;</span></span><br><span class="line">      &amp;nbsp; | &amp;nbsp;</span><br><span class="line">      <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-meta-item-icon"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-hourglass-half"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-meta-item-text"</span>&gt;</span>  阅读时长: <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-count"</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">min2read</span>(<span class="attr">post.content</span>) %&gt;</span>分<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>然后在 <code>themes/yilia/layout/_partial/article.ejs</code>中添加<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"article-inner"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (<span class="attr">post.link</span> || <span class="attr">post.title</span>)&#123; %&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">header</span> <span class="attr">class</span>=<span class="string">"article-header"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">post</span>/<span class="attr">title</span>', &#123;<span class="attr">class_name:</span> '<span class="attr">article-title</span>'&#125;) %&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (!<span class="attr">post.noDate</span>)&#123; %&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">post</span>/<span class="attr">date</span>', &#123;<span class="attr">class_name:</span> '<span class="attr">archive-article-date</span>', <span class="attr">date_format:</span> <span class="attr">null</span>&#125;) %&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- 需要添加的位置 --&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 开始添加字数统计--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span>(<span class="attr">theme.word_count</span> &amp;&amp; !<span class="attr">post.no_word_count</span>)&#123;%&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">post</span>/<span class="attr">word</span>') %&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 添加完成 --&gt;</span></span><br><span class="line">        </span><br><span class="line">        <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="3-开启功能"><a href="#3-开启功能" class="headerlink" title="3. 开启功能"></a>3. 开启功能</h4><p>在站点的<code>_config.yml</code>中添加下面代码<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 是否开启字数统计</span></span><br><span class="line"><span class="comment">#不需要使用，直接设置值为false，或注释掉</span></span><br><span class="line">word_count: <span class="keyword">True</span></span><br></pre></td></tr></table></figure></p>
 <blockquote>
 <p>ps：原创文章，转载请注明出处</p>
 </blockquote>
@@ -480,7 +469,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://www.donlex.cn/2018/09/09/hexo添加和取消live2d看板动画/" title="hexo添加和取消live2d看板动画">https://www.donlex.cn/2018/09/09/hexo添加和取消live2d看板动画/</a>
+    <a href="https://www.donlex.cn/archives/e9dc5279.html" title="hexo下yilia主题添加字数统计和阅读时长功能">https://www.donlex.cn/archives/e9dc5279.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -510,8 +499,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/07/单选题：安全和便捷，你选哪一个？/" rel="next" title="单选题：安全和便捷，你选哪一个？">
-                <i class="fa fa-chevron-left"></i> 单选题：安全和便捷，你选哪一个？
+              <a href="/archives/14d1161.html" rel="next" title="hexo添加和取消live2d看板动画">
+                <i class="fa fa-chevron-left"></i> hexo添加和取消live2d看板动画
               </a>
             
           </div>
@@ -520,8 +509,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/09/hexo下yilia主题添加字数统计和阅读时长功能/" rel="prev" title="hexo下yilia主题添加字数统计和阅读时长功能">
-                hexo下yilia主题添加字数统计和阅读时长功能 <i class="fa fa-chevron-right"></i>
+              <a href="/archives/e7a46e9a.html" rel="prev" title="Python or Java？Boss直聘告诉你该如何选择">
+                Python or Java？Boss直聘告诉你该如何选择 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -692,7 +681,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加看板娘"><span class="nav-number">1.</span> <span class="nav-text">添加看板娘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#取消看板娘"><span class="nav-number">2.</span> <span class="nav-text">取消看板娘</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-安装-hexo-wordcount"><span class="nav-number">1.</span> <span class="nav-text">1.安装 hexo-wordcount</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-文件配置"><span class="nav-number">2.</span> <span class="nav-text">2.文件配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-开启功能"><span class="nav-number">3.</span> <span class="nav-text">3. 开启功能</span></a></li></ol></div>
             
 
           </div>
