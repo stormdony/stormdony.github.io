@@ -7,7 +7,5 @@ Allow: /tags/
 Disallow: /js/
 Disallow: /css/
 Disallow: /fonts/
-
-
-Sitemap: http://www.donlex.cn/sitemap.xml
-Sitemap: http://www.donlex.cn/baidusitemap.xml
+Sitemap: https://www.donlex.cn/sitemap.xml
+Sitemap: https://www.donlex.cn/baidusitemap.xml
