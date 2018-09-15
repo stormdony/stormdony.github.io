@@ -9,5 +9,5 @@ Disallow: /css/
 Disallow: /fonts/
 
 
-Sitemap: https://www.donlex.cn/sitemap.xml
-Sitemap: https://www.donlex.cn/baidusitemap.xml
+Sitemap: http://www.donlex.cn/sitemap.xml
+Sitemap: http://www.donlex.cn/baidusitemap.xml
