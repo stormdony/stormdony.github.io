@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[NexT建站历程]]></title>
+    <url>%2Farchives%2F55e73569.html</url>
+    <content type="text"><![CDATA[最近一段时间一直在倒腾着自己的个人博客。本来直接部署到Github上就算了，没想着弄域名或者搜索引擎优化啥的。但是前几天，忽而兴起，跑到阿里云上搜了一下域名，看到一个喜欢的域名还不错，并且价格也还算亲民。一时冲动就下了单…. 冲动是魔鬼，要不是买了个域名，或许就不会有这么多的烦心事。真的是“ No zuo , No die ”。折腾了好几天，终于弄好了https和引擎收录。加上了小绿锁，感觉就是不一样；虽然现在在搜索引擎上的权重还没上去，但是相信以后会好起来的。 说到搜索引擎，不得不吐槽一下国内和国外的效率。百度都提交一个星期了，才搜得到。人家谷歌第二天就把大部分文章给索引到了。还有一点最烦人的就是，Github 是禁止百度爬虫的 :( 搞得我还得双线部署。幸好，最后还是依靠国内的 Coding ，才让百度爬虫爬取到我的站点，并收录了进去。 都说前人栽树，后人乘凉。感谢各位博主的博客，才让我少踩了很多坑。以后就可以安心的写博客，不用管这些烦心事了。 为了记录一下自己的艰辛填坑路，也为了让更多想搭建博客的人能够 少踩一点坑。下面将献上一些对我有帮助的博客链接，希望也能帮到正在折腾的你！！ GitHub Pages 绑定个人域名，免 Cloudflare 支持 https 打造个性超赞博客Hexo+NexT+GitHubPages的超深度优化 Hexo提交百度和Google收录站点 hexo的next主题个性化教程:打造炫酷网站 号外号外！解决github+hexo+yilia评论插件的问题！！！ 总的来说这几篇博文，已经涵盖了 NexT 主题的所有配置和优化过程。至于其他主题可以自行找教程，不过还是建议选用多人用的主题，避免钻牛角尖，既浪费时间，又难受，何必呢是吧？ 最后，当然是宣传一波我的站点啦。。。欢迎访问分享 ，反馈意见哈！！ https://www.donlex.cn]]></content>
+      <categories>
+        <category>随笔</category>
+        <category>NexT</category>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>NexT</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[leetcode打卡-1]]></title>
     <url>%2Farchives%2Fb6c00922.html</url>
     <content type="text"><![CDATA[前言从今天开始，将会开启我的 LeetCode 打卡之路。为了能让打卡坚持下去，就给自己设定了用博客来记录打卡过程的目标。算是留点记录吧！希望将来会感谢今天努力刷 LeetCode 的自己 : )~ 题目给定一个整数数组和一个目标值，找出数组中和为目标值的两个数。 你可以假设每个输入只对应一种答案，且同样的元素不能被重复利用。 示例: 给定 nums = [2, 7, 11, 15], target = 9 因为 nums[0] + nums[1] = 2 + 7 = 9所以返回 [0, 1] 思路采用逆向思维，用目标的值减去数组中的一个数，看结果是否还在数组里面 实现代码实现使用的是 python 语言 123456789101112131415class Solution: def twoSum(self, nums, target): """ :type nums: List[int] :type target: int :rtype: List[int] """ for i in nums: if target - i in nums and i is not target-i: return [nums.index(i), nums.index(target - i)] nums = [2, 7, 11, 15]target = 9s = Solution()print(s.twoSum(nums, target)) 题目难度难度：简单]]></content>
