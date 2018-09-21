@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.donlex.cn/"/>
-  <updated>2018-09-21T06:58:56.411Z</updated>
+  <updated>2018-09-21T07:20:09.705Z</updated>
   <id>https://www.donlex.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.donlex.cn/archives/55e73569.html"/>
     <id>https://www.donlex.cn/archives/55e73569.html</id>
     <published>2018-09-21T06:49:45.000Z</published>
-    <updated>2018-09-21T06:58:56.411Z</updated>
+    <updated>2018-09-21T07:20:09.705Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>最近一段时间一直在倒腾着自己的个人博客。本来直接部署到<a href="https://github.com/" target="_blank" rel="noopener">Github</a>上就算了，没想着弄域名或者搜索引擎优化啥的。但是前几天，忽而兴起，跑到阿里云上搜了一下域名，看到一个喜欢的域名还不错，并且价格也还算亲民。一时冲动就下了单….<br><a id="more"></a></p><p>冲动是魔鬼，要不是买了个域名，或许就不会有这么多的烦心事。真的是“ No zuo , No die ”。折腾了好几天，终于弄好了<i class="fa fa-lock" style="color:green"></i><code>https</code>和引擎收录。加上了小绿锁，感觉就是不一样；虽然现在在搜索引擎上的权重还没上去，但是相信以后会好起来的。</p><p>说到搜索引擎，不得不吐槽一下国内和国外的效率。百度都提交一个星期了，才搜得到。人家谷歌第二天就把大部分文章给索引到了。还有一点最烦人的就是，<a href="https://github.com/" target="_blank" rel="noopener">Github</a> 是禁止百度爬虫的 :( 搞得我还得双线部署。幸好，最后还是依靠国内的 <a href="https://coding.net/" target="_blank" rel="noopener">Coding</a> ，才让百度爬虫爬取到我的站点，并收录了进去。</p><p>都说前人栽树，后人乘凉。感谢各位博主的博客，才让我少踩了很多坑。以后就可以安心的写博客，不用管这些烦心事了。</p><p>为了记录一下自己的艰辛填坑路，也为了让更多想搭建博客的人能够 少踩一点坑。下面将献上一些对我有帮助的博客链接，希望也能帮到正在折腾的你！！</p><ul><li><a href="https://reuixiy.github.io/technology/computer/computer-aided-art/2018/07/18/custom-domains-on-github-pages.html" target="_blank" rel="noopener">GitHub Pages 绑定个人域名，免 Cloudflare 支持 https</a> <i class="fa fa-mouse-pointer"> </i></li></ul><ul><li><p><a href="https://reuixiy.github.io/technology/computer/computer-aided-art/2017/06/09/hexo-next-optimization.html" target="_blank" rel="noopener">打造个性超赞博客Hexo+NexT+GitHubPages的超深度优化 </a> <i class="fa fa-mouse-pointer"> </i></p></li><li><p><a href="https://www.93bok.com/Hexo提交百度和Google收录站点/" target="_blank" rel="noopener">Hexo提交百度和Google收录站点 </a> <i class="fa fa-mouse-pointer"> </i></p></li><li><p><a href="http://shenzekun.cn/hexo的next主题个性化配置教程.html" target="_blank" rel="noopener">hexo的next主题个性化教程:打造炫酷网站 </a> <i class="fa fa-mouse-pointer"> </i></p></li><li><p><a href="https://www.cnblogs.com/pengwenzheng/p/8407479.html" target="_blank" rel="noopener">号外号外！解决github+hexo+yilia评论插件的问题！！！ </a> <i class="fa fa-mouse-pointer"> </i></p></li></ul><p>总的来说这几篇博文，已经涵盖了<a href="http://theme-next.iissnan.com/" target="_blank" rel="noopener"> NexT </a>主题的所有配置和优化过程。至于其他主题可以自行找教程，不过还是建议选用多人用的主题，避免钻牛角尖，既浪费时间，又难受，何必呢是吧？</p><p>最后，当然是宣传一波我的站点啦。。。<br>欢迎访问分享 ，反馈意见哈！！<i class="fa fa-chrome" style="color:red"></i> <a href="https://www.donlex.cn">https://www.donlex.cn</a></p>]]></content>
     
