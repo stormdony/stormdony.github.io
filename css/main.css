@@ -1824,7 +1824,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #6efa83;
+  background: #62a166;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3194,7 +3194,6 @@ a.categories:hover {
 }
 .pagination .page-number.current {
   border-radius: 100%;
-  background-color: linear-gradient(to right, #40e0d0, #ff8c00, #ff0080);
 }
 .pagination .prev,
 .pagination .next,
