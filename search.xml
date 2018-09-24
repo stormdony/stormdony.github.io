@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[NexT主题添加音乐]]></title>
+    <url>%2Farchives%2Fbda67445.html</url>
+    <content type="text"><![CDATA[NexT主题添加音乐在Hexo博客中添加音乐，有三种方式可以插入音乐 先来预览一下效果： [00:00.780]멈춘 시간 속 [00:03.220]잠든 너를 찾아가 [00:05.430]아무리 막아도 [00:07.440]결국 너의 곁인 걸 [00:09.970]길고 긴 여행을 끝내 [00:12.890]이젠 돌아가 [00:15.060]너라는 집으로 [00:17.310]지금 다시 [00:18.310]way back home [00:40.140]아무리 힘껏 닫아도 [00:42.510]다시 열린 서랍 같아 [00:44.840]하늘로 높이 날린 넌 [00:47.340]자꾸 내게 되돌아와 [00:49.700]힘들게 삼킨 이별도 [00:52.210]다 그대로인 걸 [00:54.260]oh oh oh [00:57.710]수없이 떠난 길 위에서 [01:00.550]난 너를 발견하고 [01:02.810]비우려 했던 맘은 또 [01:05.350]이렇게 너로 차올라 [01:07.850]발걸음의 끝에 [01:10.250]늘 니가 부딪혀 [01:12.550]그만 [01:14.940]그만 [01:17.560]멈춘 시간 속 [01:19.500]잠든 너를 찾아가 [01:22.230]아무리 막아도 [01:24.210]결국 너의 곁인 걸 [01:26.660]길고 긴 여행을 끝내 [01:29.690]이젠 돌아가 [01:31.870]너라는 집으로 [01:33.740]지금 다시 [01:34.900]way back home [01:55.250]조용히 잠든 방을 열어 [01:58.070]기억을 꺼내 들어 [02:00.410]부서진 시간 위에서 [02:02.680]선명히 너는 떠올라 [02:05.300]길 잃은 맘 속에 [02:07.710]널 가둔 채 살아 [02:10.100]그만 [02:12.530]그만 [02:15.200]멈춘 시간 속 [02:17.260]잠든 너를 찾아가 [02:19.770]아무리 막아도 [02:21.820]결국 너의 곁인 걸 [02:24.220]길고 긴 여행을 끝내 [02:27.220]이젠 돌아가 [02:29.330]너라는 집으로 [02:31.260]지금 다시 [02:32.480]way back home [02:34.750]세상을 뒤집어 [02:37.090]찾으려 해 [02:39.660]오직 너로 완결된 [02:41.940]이야기를 [02:45.010]모든 걸 잃어도 [02:49.580]난 너 하나면 돼 [03:02.720]빛이 다 꺼진 여기 [03:05.610]나를 안아줘 [03:13.150]눈을 감으면 [03:14.520]소리 없이 밀려와 [03:17.440]이 마음 그 위로 [03:19.390]넌 또 한 겹 쌓여가 [03:21.880]내겐 그 누구도 아닌 [03:24.740]니가 필요해 [03:27.070]돌아와 내 곁에 [03:29.340]그날까지 [03:30.380]I’m not done var ap = new APlayer({ element: document.getElementById("aplayer-zLRDGvMf"), narrow: false, autoplay: false, showlrc: 2, music: { title: "Way Back Home", author: "SHAUN", url: "http://music.163.com/song/media/outer/url?id=863046037.mp3", pic: "https://p1.music.126.net/MAkLvm2p9LE0mWLEr2NkMA==/109951163378634466.jpg?param=130y130", } }); window.aplayers || (window.aplayers = []); window.aplayers.push(ap); 一、使用html标签写法如下： 1&lt;audio src="https://什么什么什么.mp3" style="max-height :100%; max-width: 100%; display: block; margin-left: auto; margin-right: auto;" controls="controls" loop="loop" preload="meta"&gt;Your browser does not support the audio tag.&lt;/audio&gt; 二、使用网易云外链网易云音乐的外链很好用，不仅有可以单曲，还能有歌单，有兴趣的自己去网易云音乐找首歌尝试。但是有一些音乐因为版权原因放不了，还有就是不完全支持 https，导致小绿锁不见了。 网易云歌曲外链接获取方法首先 找到你要下载的歌曲 用网页版打开 复制链接中的歌曲ID 如：SHAUN - Way Back Home1https://music.163.com/#/song?id=863046037 ID就是863046037然后将ID替换到下面的链接中1http://music.163.com/song/media/outer/url?id= .mp3 如：1http://music.163.com/song/media/outer/url?id=863046037.mp3 三、安装插件安装插件可以完美的解决上面的问题，并且用插件，有显示歌词功能，也美观，建议使用这种方法。 安装插件首先在站点文件夹根目录安装插件： 所在目录：~/blog/1npm install hexo-tag-aplayer --save 使用方法一在文章中的写法：1&#123;% aplayer title author url [picture_url, narrow, autoplay, width:xxx, lrc:xxx] %&#125; 标签参数 title : 曲目标题 author: 曲目作者 url: 音乐文件 URL 地址 picture_url: (可选) 音乐对应的图片地址 narrow: （可选）播放器袖珍风格 autoplay: (可选) 自动播放，移动端浏览器暂时不支持此功能 width:xxx:(可选) 播放器宽度(默认: 100%) lrc:xxx: (可选）歌词文件 URL 地址 实例1&#123;% aplayer "歌曲名" "歌手名" "https://什么什么什么.mp3" "https://封面图.jpg" "lrc:https://歌词.lrc" %&#125; 方法二除了使用标签 lrc 选项来设定歌词，你也可以直接使用 aplayerlrc 标签来直接插入歌词文本在博客中：123&#123;% aplayerlrc "title" "author" "url" "封面(选填)" "autoplay" %&#125;[00:00.00]lrc here&#123;% endaplayerlrc %&#125; 更多详细使用方法参考文档：hexo-tag-aplayer 获取歌词歌词的获取，可以直接找到各层次文件，或者可以直接在网易云上通过以下方法获取1http://music.163.com/api/song/media?id=863046037 其中id为网易云歌曲的id，打开链接之后，可以把”lyric”字段的值复制下来，再删除\n就可以直接放到aplayerlrc标签中了，这样就可以有歌词出现]]></content>
+      <categories>
+        <category>NexT</category>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>NexT</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[[leetcode02]9-回文数]]></title>
     <url>%2Farchives%2F4644f3b9.html</url>
     <content type="text"><![CDATA[题目第9题：回文数 判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序(从右向左)读都是一样的整数。示例 1: 输入: 121输出: true 示例 2: 输入: -121输出: false 解释: 从左向右读, 为 -121 。 从右向左读, 为 121- 。因此它不是一个回文数。 示例 3: 输入: 10输出: false 解释: 从右向左读, 为 01 。因此它不是一个回文数。 进阶:你能不将整数转为字符串来解决这个问题吗？ 思路&amp;实现思路：先取出各个数字变成list，再翻转；然后判断新的list与原来的是否一致123456789101112131415class Solution: def isPalindrome(self, x): """ 先取出各个数字组成list，再翻转 :type x: int :rtype: bool """ li = [] if x &lt; 0: return False else: while x != 0: li.append(x % 10) x = int(x / 10) return list(reversed(li)) == li 官方解释首先，我们应该处理一些临界情况。所有负数都不可能是回文，例如：-123 不是回文，因为 - 不等于 3。所以我们可以对所有负数返回 false。 现在，让我们来考虑如何反转后半部分的数字。 对于数字 1221，如果执行 1221 % 10，我们将得到最后一位数字 1，要得到倒数第二位数字，我们可以先通过除以 10 把最后一位数字从 1221 中移除，1221 / 10 = 122，再求出上一步结果除以10的余数，122 % 10 = 2，就可以得到倒数第二位数字。如果我们把最后一位数字乘以10，再加上倒数第二位数字，1 * 10 + 2 = 12，就得到了我们想要的反转后的数字。 如果继续这个过程，我们将得到更多位数的反转数字。 现在的问题是，我们如何知道反转数字的位数已经达到原始数字位数的一半？ 我们将原始数字除以 10，然后给反转后的数字乘上 10，所以，当原始数字小于反转后的数字时，就意味着我们已经处理了一半位数的数字。 复杂度分析时间复杂度：O(\log_{10}(n))O(log 10 (n))， 对于每次迭代，我们会将输入除以10，因此时间复杂度为 O(\log_{10}(n))O(log10(n))。空间复杂度：O(1)O(1)。 实现根据官方的解释，我试着实现了一下：1234567891011121314def gaunfang(self, x): ''' 用时：400ms :param x: :return: ''' if x &lt; 0: return False temp_x = x y = 0 while temp_x != 0: y = y * 10 + temp_x % 10 temp_x = int(temp_x / 10) return y == x 其他方法1234567891011def reversed_str(self, x): ''' 翻转字符串 用时：446ms :param x: :return: ''' if str(x) == str(x)[::-1]: return True else: return False 这个方法主要是采用了字符串截取的方法，从最后逐位翻转，在判断。 题目难度难度：简单 总结这道题的算法难度不大，实现起来简单，但是没有想到的是，python的实现方法会是如此的简洁。看来，还是的多接触一下优秀的代码，增长一下自己的见识才行！！！]]></content>
@@ -25,9 +38,9 @@
         <category>hexo</category>
       </categories>
       <tags>
-        <tag>随笔</tag>
         <tag>NexT</tag>
         <tag>hexo</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
