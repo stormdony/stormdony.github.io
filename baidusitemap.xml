@@ -4,24 +4,8 @@
 
     
   <url>
-    <loc>https://www.donlex.cn/archives/4a17b156.html</loc>
-    <lastmod>2018-09-27T04:02:16.192Z</lastmod>
-    <data>
-        <display>
-        <title>Hello World</title>
-        <pubTime>2018-09-05T02:26:45.363Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-    
-  <url>
     <loc>https://www.donlex.cn/archives/bda67445.html</loc>
-    <lastmod>2018-09-24T06:28:10.594Z</lastmod>
+    <lastmod>2018-09-27T06:08:14.382Z</lastmod>
     <data>
         <display>
         <title>NexT主题添加音乐</title>
@@ -43,6 +27,22 @@
     </data>
     </url>
 
+    
+  <url>
+    <loc>https://www.donlex.cn/archives/4a17b156.html</loc>
+    <lastmod>2018-09-27T04:02:16.192Z</lastmod>
+    <data>
+        <display>
+        <title>Hello World</title>
+        <pubTime>2018-09-05T02:26:45.363Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>https://www.donlex.cn/archives/4644f3b9.html</loc>
@@ -112,11 +112,11 @@
         <title>NexT建站历程</title>
         <pubTime>2018-09-21T06:49:45.000Z</pubTime>
         
+        <tag>随笔</tag>
+         
         <tag>NexT</tag>
          
         <tag>hexo</tag>
-         
-        <tag>随笔</tag>
          
          
            
