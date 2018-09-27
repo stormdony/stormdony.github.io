@@ -4,8 +4,8 @@ Allow: /archives/
 Allow: /about/
 Allow: /categories/
 Allow: /tags/
-Disallow: /js/
-Disallow: /css/
-Disallow: /fonts/
+Allow: /js/
+Allow: /css/
+Allow: /fonts/
 Sitemap: https://www.donlex.cn/sitemap.xml
 Sitemap: https://www.donlex.cn/baidusitemap.xml
