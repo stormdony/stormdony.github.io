@@ -97,7 +97,7 @@
 <meta property="og:site_name" content="Don Lex">
 <meta property="og:description" content="10月份开始引用不蒜子作为静态网站的博客的统计功能都无法显示了，刚开始我还以为是网络原因，无法响应导致的。但是上不蒜子的官网看了一下，才知道，原来不蒜子的域名更改了，导致script引用不了，从而无法进行统计。  				[00:00.780]멈춘 시간 속 [00:03.220]잠든 너를 찾아가 [00:05.430]아무리 막아도 [00:07.440]결국 너의 곁인 걸 [00:09.9">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-09T03:57:37.545Z">
+<meta property="og:updated_time" content="2018-10-09T04:06:26.246Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解决不蒜子统计不可用问题">
 <meta name="twitter:description" content="10月份开始引用不蒜子作为静态网站的博客的统计功能都无法显示了，刚开始我还以为是网络原因，无法响应导致的。但是上不蒜子的官网看了一下，才知道，原来不蒜子的域名更改了，导致script引用不了，从而无法进行统计。  				[00:00.780]멈춘 시간 속 [00:03.220]잠든 너를 찾아가 [00:05.430]아무리 막아도 [00:07.440]결국 너의 곁인 걸 [00:09.9">
@@ -462,7 +462,7 @@
 
       
         <p>10月份开始引用不蒜子作为静态网站的博客的统计功能都无法显示了，刚开始我还以为是网络原因，无法响应导致的。但是上<a href="http://busuanzi.ibruce.info/" target="_blank" rel="noopener">不蒜子</a>的官网看了一下，才知道，原来<a href="http://busuanzi.ibruce.info/" target="_blank" rel="noopener">不蒜子</a>的域名更改了，导致<code>script</code>引用不了，从而无法进行统计。</p>
-<div id="aplayer-asNxCHeG" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+<div id="aplayer-rZUJLLCv" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
 				<pre class="aplayer-lrc-content">[00:00.780]멈춘 시간 속
 [00:03.220]잠든 너를 찾아가
 [00:05.430]아무리 막아도
@@ -533,7 +533,7 @@
 			</div>
 			<script>
 				var ap = new APlayer({
-					element: document.getElementById("aplayer-asNxCHeG"),
+					element: document.getElementById("aplayer-rZUJLLCv"),
 					narrow: false,
 					autoplay: false,
 					showlrc: 2,
@@ -553,9 +553,9 @@
 <p>因此，想要继续使用不蒜子功能，只能修改NexT的配置了。</p>
 <p>只需要将 <strong>..\next\layout_third-party\analytics</strong>下的 <strong>busuanzi-counter.swig</strong>修改成不蒜子新的域名就可以正常显示了</p>
 <p>例子：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">async</span> <span class="attr">src</span>=<span class="string">"//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">async</span> <span class="attr">src</span>=<span class="string">"//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>将上面的代码替换成下面的代码即可：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">async</span> <span class="attr">src</span>=<span class="string">"//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">async</span> <span class="attr">src</span>=<span class="string">"//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
