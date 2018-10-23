@@ -1824,7 +1824,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #37ff59;
+  background: #75fa6e;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3193,8 +3193,15 @@ a.categories:hover {
   border-bottom: none;
   text-decoration: underline;
 }
+.pagination {
+  margin: 120px 0 40px;
+  text-align: center;
+  border-top: none;
+}
 .pagination .page-number.current {
   border-radius: 100%;
+  background: #9acd32;
+  border-top: none;
 }
 .pagination .prev,
 .pagination .next,
