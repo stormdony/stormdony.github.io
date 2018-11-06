@@ -4,6 +4,42 @@
 
     
   <url>
+    <loc>https://www.donlex.cn/archives/e9dc5278.html</loc>
+    <lastmod>2018-11-06T13:10:20.518Z</lastmod>
+    <data>
+        <display>
+        <title>Excel常用函数</title>
+        <pubTime>2018-11-06T12:45:40.000Z</pubTime>
+        
+        <tag>excel</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.donlex.cn/archives/eea56fba.html</loc>
+    <lastmod>2018-11-06T13:06:52.184Z</lastmod>
+    <data>
+        <display>
+        <title>web项目中使用支付宝接口</title>
+        <pubTime>2018-10-23T09:52:18.000Z</pubTime>
+        
+        <tag>JavaWeb</tag>
+         
+        <tag>支付接口</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.donlex.cn/archives/8f7c4fe6.html</loc>
     <lastmod>2018-10-27T10:38:05.415Z</lastmod>
     <data>
@@ -18,25 +54,6 @@
              
               <breadCrumb title="hexo" url="https://www.donlex.cn/categories/hexo/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.donlex.cn/archives/undefined.html</loc>
-    <lastmod>2018-10-23T10:11:37.438Z</lastmod>
-    <data>
-        <display>
-        <title>web项目中使用支付宝接口</title>
-        <pubTime>2018-10-23T09:52:18.000Z</pubTime>
-        
-        <tag>JavaWeb</tag>
-         
-        <tag>支付接口</tag>
-         
-         
-           
         </display>
     </data>
     </url>
@@ -91,9 +108,9 @@
         <title>NexT填坑-样式无法加载</title>
         <pubTime>2018-09-29T06:07:45.000Z</pubTime>
         
-        <tag>hexo</tag>
-         
         <tag>NexT</tag>
+         
+        <tag>hexo</tag>
          
          
            
@@ -143,9 +160,9 @@
         <title>NexT主题添加音乐</title>
         <pubTime>2018-09-24T06:20:37.000Z</pubTime>
         
-        <tag>hexo</tag>
-         
         <tag>NexT</tag>
+         
+        <tag>hexo</tag>
          
          
            
@@ -233,9 +250,9 @@
         <title>NexT建站历程</title>
         <pubTime>2018-09-21T06:49:45.000Z</pubTime>
         
-        <tag>hexo</tag>
-         
         <tag>NexT</tag>
+         
+        <tag>hexo</tag>
          
         <tag>随笔</tag>
          
