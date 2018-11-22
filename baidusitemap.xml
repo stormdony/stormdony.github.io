@@ -1,360 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-
-    
   <url>
+    <loc>https://www.donlex.cn/archives/d87f7e0c.html</loc>
+    <lastmod>2018-11-22T06:46:20.848Z</lastmod>
+  </url>  <url>
     <loc>https://www.donlex.cn/archives/e9dc5278.html</loc>
     <lastmod>2018-11-06T13:10:20.518Z</lastmod>
-    <data>
-        <display>
-        <title>Excel常用函数</title>
-        <pubTime>2018-11-06T12:45:40.000Z</pubTime>
-        
-        <tag>excel</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://www.donlex.cn/archives/eea56fba.html</loc>
     <lastmod>2018-11-06T13:06:52.184Z</lastmod>
-    <data>
-        <display>
-        <title>web项目中使用支付宝接口</title>
-        <pubTime>2018-10-23T09:52:18.000Z</pubTime>
-        
-        <tag>JavaWeb</tag>
-         
-        <tag>支付接口</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://www.donlex.cn/archives/8f7c4fe6.html</loc>
     <lastmod>2018-10-27T10:38:05.415Z</lastmod>
-    <data>
-        <display>
-        <title>解决不蒜子统计不可用问题</title>
-        <pubTime>2018-10-09T03:30:44.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="hexo" url="https://www.donlex.cn/categories/hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
-    
-  <url>
+  </url>  <url>
     <loc>https://www.donlex.cn/archives/adea6c28.html</loc>
     <lastmod>2018-10-09T03:28:40.572Z</lastmod>
-    <data>
-        <display>
-        <title>解除Dr.com的WiFi限制，开启热点</title>
-        <pubTime>2018-10-09T02:55:53.000Z</pubTime>
-        
-        <tag>Dr.com</tag>
-         
-        <tag>校园网</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://www.donlex.cn/archives/35de7772.html</loc>
     <lastmod>2018-10-01T14:42:54.208Z</lastmod>
-    <data>
-        <display>
-        <title>To be happier</title>
-        <pubTime>2018-10-01T13:06:47.000Z</pubTime>
-        
-        <tag>随笔</tag>
-         
-         
-           
-             
-              <breadCrumb title="随笔" url="https://www.donlex.cn/categories/%E9%9A%8F%E7%AC%94/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://www.donlex.cn/archives/ddf26aa7.html</loc>
     <lastmod>2018-09-29T06:27:52.779Z</lastmod>
-    <data>
-        <display>
-        <title>NexT填坑-样式无法加载</title>
-        <pubTime>2018-09-29T06:07:45.000Z</pubTime>
-        
-        <tag>NexT</tag>
-         
-        <tag>hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="NexT" url="https://www.donlex.cn/categories/NexT/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://www.donlex.cn/archives/b6c00922.html</loc>
     <lastmod>2018-09-29T06:27:31.525Z</lastmod>
-    <data>
-        <display>
-        <title>leetcode打卡-1</title>
-        <pubTime>2018-09-20T07:40:00.000Z</pubTime>
-        
-        <tag>python</tag>
-         
-        <tag>算法</tag>
-         
-        <tag>LeetCode</tag>
-         
-         
-           
-             
-              <breadCrumb title="python" url="https://www.donlex.cn/categories/python/"/>
-          
-             
-              <breadCrumb title="算法" url="https://www.donlex.cn/categories/python/%E7%AE%97%E6%B3%95/"/>
-          
-             
-              <breadCrumb title="LeetCode" url="https://www.donlex.cn/categories/python/%E7%AE%97%E6%B3%95/LeetCode/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://www.donlex.cn/archives/bda67445.html</loc>
     <lastmod>2018-09-28T05:00:48.117Z</lastmod>
-    <data>
-        <display>
-        <title>NexT主题添加音乐</title>
-        <pubTime>2018-09-24T06:20:37.000Z</pubTime>
-        
-        <tag>NexT</tag>
-         
-        <tag>hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="NexT" url="https://www.donlex.cn/categories/NexT/"/>
-          
-             
-              <breadCrumb title="hexo" url="https://www.donlex.cn/categories/NexT/hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://www.donlex.cn/archives/fd7c0b75.html</loc>
     <lastmod>2018-09-27T08:21:16.302Z</lastmod>
-    <data>
-        <display>
-        <title>爬虫利器-cURL转换</title>
-        <pubTime>2018-09-06T02:56:02.000Z</pubTime>
-        
-        <tag>python</tag>
-         
-         
-           
-             
-              <breadCrumb title="python" url="https://www.donlex.cn/categories/python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://www.donlex.cn/archives/4a17b156.html</loc>
     <lastmod>2018-09-27T04:02:16.192Z</lastmod>
-    <data>
-        <display>
-        <title>Hello World</title>
-        <pubTime>2018-09-05T02:26:45.363Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://www.donlex.cn/archives/4644f3b9.html</loc>
     <lastmod>2018-09-22T13:18:41.310Z</lastmod>
-    <data>
-        <display>
-        <title>[leetcode02]9-回文数</title>
-        <pubTime>2018-09-22T12:08:16.000Z</pubTime>
-        
-        <tag>python</tag>
-         
-        <tag>算法</tag>
-         
-        <tag>LeetCode</tag>
-         
-         
-           
-             
-              <breadCrumb title="python" url="https://www.donlex.cn/categories/python/"/>
-          
-             
-              <breadCrumb title="算法" url="https://www.donlex.cn/categories/python/%E7%AE%97%E6%B3%95/"/>
-          
-             
-              <breadCrumb title="LeetCode" url="https://www.donlex.cn/categories/python/%E7%AE%97%E6%B3%95/LeetCode/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://www.donlex.cn/archives/55e73569.html</loc>
     <lastmod>2018-09-21T07:20:09.705Z</lastmod>
-    <data>
-        <display>
-        <title>NexT建站历程</title>
-        <pubTime>2018-09-21T06:49:45.000Z</pubTime>
-        
-        <tag>NexT</tag>
-         
-        <tag>hexo</tag>
-         
-        <tag>随笔</tag>
-         
-         
-           
-             
-              <breadCrumb title="随笔" url="https://www.donlex.cn/categories/%E9%9A%8F%E7%AC%94/"/>
-          
-             
-              <breadCrumb title="NexT" url="https://www.donlex.cn/categories/%E9%9A%8F%E7%AC%94/NexT/"/>
-          
-             
-              <breadCrumb title="hexo" url="https://www.donlex.cn/categories/%E9%9A%8F%E7%AC%94/NexT/hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
-    
-  <url>
+  </url>  <url>
     <loc>https://www.donlex.cn/archives/4ec71def.html</loc>
     <lastmod>2018-09-14T04:09:53.337Z</lastmod>
-    <data>
-        <display>
-        <title>单选题：安全和便捷，你选哪一个？</title>
-        <pubTime>2018-09-07T11:07:04.000Z</pubTime>
-        
-        <tag>随笔</tag>
-         
-         
-           
-             
-              <breadCrumb title="随笔" url="https://www.donlex.cn/categories/%E9%9A%8F%E7%AC%94/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://www.donlex.cn/archives/14d1161.html</loc>
     <lastmod>2018-09-14T04:09:53.333Z</lastmod>
-    <data>
-        <display>
-        <title>hexo添加和取消live2d看板动画</title>
-        <pubTime>2018-09-09T06:31:09.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-        <tag>yilia</tag>
-         
-         
-           
-             
-              <breadCrumb title="yilia" url="https://www.donlex.cn/categories/yilia/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://www.donlex.cn/archives/e9dc5279.html</loc>
     <lastmod>2018-09-14T04:09:53.330Z</lastmod>
-    <data>
-        <display>
-        <title>hexo下yilia主题添加字数统计和阅读时长功能</title>
-        <pubTime>2018-09-09T07:56:34.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-        <tag>yilia</tag>
-         
-         
-           
-             
-              <breadCrumb title="yilia" url="https://www.donlex.cn/categories/yilia/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://www.donlex.cn/archives/e7a46e9a.html</loc>
     <lastmod>2018-09-14T04:09:53.322Z</lastmod>
-    <data>
-        <display>
-        <title>Python or Java？Boss直聘告诉你该如何选择</title>
-        <pubTime>2018-09-10T03:13:33.000Z</pubTime>
-        
-        <tag>python</tag>
-         
-         
-           
-             
-              <breadCrumb title="python" url="https://www.donlex.cn/categories/python/"/>
-          
-        </display>
-    </data>
-    </url>
-
+  </url>
 </urlset>
