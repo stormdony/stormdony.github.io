@@ -137,7 +137,7 @@ tpwidget("show");</script>
 <meta property="og:image" content="https://i.loli.net/2019/01/02/5c2c451776ccd.png">
 <meta property="og:image" content="https://i.loli.net/2019/01/02/5c2c4779efb85.png">
 <meta property="og:image" content="https://i.loli.net/2019/01/02/5c2c479026908.png">
-<meta property="og:updated_time" content="2019-01-02T05:43:32.435Z">
+<meta property="og:updated_time" content="2019-01-02T08:20:00.863Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo接入Google AdSense广告">
 <meta name="twitter:description" content="Don’t be evil">
@@ -520,8 +520,11 @@ tpwidget("show");</script>
       
 
       
-        <p></p><p style="text-align:center;size:16px;font-weight:500">Don’t be evil</p><p></p>
-<p><center><img src="https://i.loli.net/2019/01/02/5c2c451776ccd.png"></center><br><a id="more"></a></p>
+        <blockquote class="blockquote-center"><p><strong>Don’t be evil</strong></p>
+</blockquote>
+<a id="more"></a>
+<center><img src="https://i.loli.net/2019/01/02/5c2c451776ccd.png"></center>
+
 <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>2019年开始，由于个人的博客站点已经建立几个月，一直安静地躺在那里做美男子。就想着接点小广告，赚一点睡后收入。于是搜索发现了Google AdSense ，发现它可以在hexo博客上挂上广告位进行展示，于是乎注册了一个账号，没想到今早通过了审核。<br>今天又弄了一下广告位的布局，总共commit了差不多10次左右，终于把广告位置排的比较合理了。</p>
 <p>下面分享一下具体的执行步骤</p>
 <h3 id="注册AdSense账号"><a href="#注册AdSense账号" class="headerlink" title="注册AdSense账号"></a>注册AdSense账号</h3><p>注册额链接：<a href="https://www.google.com/adsense/start/#/?modal_active=none" title="AdSense" target="_blank" rel="noopener">AdSense</a><br><em>ps:需要 V屁N（vpn），请自行找梯子。。。</em></p>
@@ -557,7 +560,8 @@ tpwidget("show");</script>
 </ol>
 <h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>虽然现在一般的个人博客站点流量一般都不大，但是有空余的地方放置一点广告还是能起到丰富博客的作用的。而且Google AdSense的广告相比百度联盟的还是比较优质的！</p>
 <p>虽然赚不了几个<i class="fa fa-dollar" aria-hidden="true"></i>，但是养着一个广告也是不错，万一过几年再上AdSense看一下可能就已经达到100刀的提现额度了呢。这也算是一种增加睡后收入的方法。<i class="fa fa-smile-o" aria-hidden="true"></i></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">文章首发于慕课网：https://www.imooc.com/article/270946</span><br></pre></td></tr></table></figure>
+<div class="note danger"><p>文章首发于慕课网：<a href="https://www.imooc.com/article/270946" target="_blank" rel="noopener">https://www.imooc.com/article/270946</a></p></div>
+
       
     </div>
     
@@ -892,12 +896,7 @@ tpwidget("show");</script>
 
 
 
-  <span>
-<!-- cnzz_begin -->
-	<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1274712742'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1274712742%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
-<!-- cnzz_end -->
-	Hosted by <a href="https://pages.coding.me">Coding Pages</a>
-</span>
+  <span>Hosted by <a href="https://pages.coding.me">Coding Pages</a></span>
 
 
 
@@ -928,6 +927,10 @@ tpwidget("show");</script>
 
 
 
+
+<div>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1274712742'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1274712742%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+</div>
 
 
         
@@ -1582,7 +1585,11 @@ tpwidget("show");</script>
 <!--动态标题-->
 <script type="text/javascript" src="/js/src/dytitle.js"></script>
 <!-- 雪花特效 -->
-<script type="text/javascript" src="/js/src/snow.js"></script>
-
+<script type="text/javascript">
+  var windowWidth = $(window).width();
+  if (windowWidth > 480) {
+    document.write('<script type="text/javascript" src="/js/src/snow.js"><\/script>');
+  }
+</script>
 <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":50,"height":100},"mobile":{"show":false},"log":false});</script></body>
 </html>

@@ -515,8 +515,8 @@ tpwidget("show");</script>
 
       
         
-          <p></p><p style="text-align:center;size:16px;font-weight:500">Don’t be evil</p><p></p>
-<p><center><img src="https://i.loli.net/2019/01/02/5c2c451776ccd.png"></center><br>
+          <blockquote class="blockquote-center"><p><strong>Don’t be evil</strong></p>
+</blockquote>
 
 	
           <!--noindex-->
@@ -528,7 +528,7 @@ tpwidget("show");</script>
           <!--/noindex-->
         
       
-    </p></div>
+    </div>
     
     
     
@@ -1527,12 +1527,7 @@ tpwidget("show");</script>
 
 
 
-  <span>
-<!-- cnzz_begin -->
-	<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1274712742'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1274712742%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
-<!-- cnzz_end -->
-	Hosted by <a href="https://pages.coding.me">Coding Pages</a>
-</span>
+  <span>Hosted by <a href="https://pages.coding.me">Coding Pages</a></span>
 
 
 
@@ -1563,6 +1558,10 @@ tpwidget("show");</script>
 
 
 
+
+<div>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1274712742'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1274712742%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+</div>
 
 
         
@@ -2213,7 +2212,11 @@ tpwidget("show");</script>
 <!--动态标题-->
 <script type="text/javascript" src="/js/src/dytitle.js"></script>
 <!-- 雪花特效 -->
-<script type="text/javascript" src="/js/src/snow.js"></script>
-
+<script type="text/javascript">
+  var windowWidth = $(window).width();
+  if (windowWidth > 480) {
+    document.write('<script type="text/javascript" src="/js/src/snow.js"><\/script>');
+  }
+</script>
 <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":50,"height":100},"mobile":{"show":false},"log":false});</script></body>
 </html>

@@ -469,6 +469,7 @@ body {
   left: 0;
   bottom: 0;
   width: 100%;
+  margin-top: 30px;
   min-height: 50px;
 }
 .footer-inner {
@@ -1824,7 +1825,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff9094;
+  background: #d4ff82;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3024,6 +3025,15 @@ pre .javascript .function {
   padding: 25px;
   -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.5);
   -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
+}
+@media (max-width: 767px) {
+  .content-wrap {
+    width: 100%;
+    padding: 20px;
+    min-height: auto;
+    margin-bottom: 30px;
+    border-radius: initial;
+  }
 }
 #heart {
   animation: heartAnimate 1.33s ease-in-out infinite;
