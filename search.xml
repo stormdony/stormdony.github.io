@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[爬取猫眼评论，分析《阿丽塔：战斗天使》]]></title>
+    <url>%2Farchives%2Ff7b23e1a.html</url>
+    <content type="text"><![CDATA[文章首发于慕课网 日本漫画《铳梦》改编电影《阿丽塔：战斗天使（Alita: Battle Angel）》于2019年2月22日在中国大陆上映了。近几天，网上对于这部电影的分析评论也很多，今天通过猫眼电影上的评论粗浅地看一下大众对这部科幻电影的评价。 工具库 jieba pyecharts wordcloud matplotlib 分析网站通过在浏览器模拟移动端请求评论的数据，可以看到随着页面的更改url并没有发生变化，初步判断该网页是通过js加载的，通过多次的实践，找到了请求返回的真实url和关键参数，这里返回的是json格式的数据，里面有我们需要的信息。 通过比较多次请求信息，发现以下的参数 其中，offset是每次请求的起始评论条数；limit是每次请求的条数；ts我猜测应该是时间戳，不用管它 抓取信息通过返回的json数据，选取其中的content,score,nick ,gender这四个参数，将这些信息写入一个文本中保存起来。 1234567891011121314151617181920212223242526def get_comments(self): ''' 爬取评论信息 :return: ''' for i in range(0, 14352, 15): URL = self.url.format(i) data = requests.get(url=URL, headers=self.header) time.sleep(random.random() * 3) com = json.loads(data.text) comments = com['data']['comments'] if comments: for item in comments: data = &#123; 'content': item['content'], 'score': item['score'], 'nick': item['nick'], 'gender': item['gender'], &#125; print(data) # 存入文本中 with open('comments.txt', 'a+', encoding='UTF-8') as file: file.writelines( json.dumps(data, ensure_ascii=False) + '\n') else: break 数据分析由于爬取的数据都是比较规整，并且没有选择太多的特征，所以就跳过清洗阶段，直接进行分析。为了便于观察，这里使用pyecharts进行可视化处理。 1. 评论词云通过词云，能够一目了然地知道这些精选评论都说了些什么。由于使用pyecharts制作词云需要比较繁琐的处理，所以直接使用jieba分词并用WordCloud进行制作词云。123456789101112131415161718192021def get_wordcloud(self): ''' 制作词云图 :return: ''' text = self.get_context() seg_list = jieba.cut(text, cut_all=True) wc = WordCloud(background_color="#CCC", # 设置背景颜色 # mask = pic , #设置背景图片 max_words=2000, # 设置最大显示的字数 margin=5, font_path="C:\\Windows\\Fonts\\STFANGSO.ttf", # 不加这一句显示口字形乱码 max_font_size=80, # 设置字体最大值 random_state=40, # 设置有多少种随机生成状态，即有多少种配色方案 ) w1 = "/ ".join(seg_list) # 全模式 mword = wc.generate(w1) plt.imshow(mword) plt.axis("off") plt.savefig('wordcloud.png') # 保存图片 plt.show() 可以看到，“好看”，“特效”，“第二部”，“剧情”，这几个词都是出现比较多次的，再通过去原来保存评论信息的文本中查询，这些词的整个评论，我发现很多人都是在说电影没有结局，或者期待出第二部的。 2.性别比例由于爬取到的性别都是使用数字0，1,2进行标识的，所以按照程序员的思维。我就用 0代表男，1代表女，2代表未知来进行处理了。 从图中可以看出，评论以男性居多，约占总数的50%，估计是男同胞们对这类比较抽象，充满想象的电影比较感兴趣吧~ 3.评分情况从猫眼的总评分9.0来看，这部电影还是比较不错的，截止2月24日已经在中国拿下了39510万元的票房。 通过上图，可以清楚地看到，大部分的评分都是8-10分的，所以总评的9.0也是有依据的。 最后虽然这部电影一些的情节都没有介绍清楚，但是很多的战斗细节都用特效展现的淋漓尽致。据说全片特效渲染动用了30000台电脑，总耗时4.32亿小时，这也是国内的“五毛钱”特效所不能比拟的。 最后来看下这部片的女主吧！ 附源码传送门： https://github.com/stormdony/python_demo/tree/master/MaoYan_Alita_Battle_Angel]]></content>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[解决CentOS启动docker失败]]></title>
     <url>%2Farchives%2F4a8dab04.html</url>
     <content type="text"><![CDATA[解决CentOS启动docker失败安装了Docker之后，使用命令启动却失败。报错： Job for docker.service failed because the control process exited with error code. See “systemctl status docker.service” and “journalctl -xe” for details. 按照提示：systemctl status docker.service，看到的日志信息： 看了几篇博客都没有解决，最终找到解决办法：是由于docker不支持图像内核驱动，SELinux不支持这个内核上的OrthALA2图形驱动程序。解决办法：修改docker配置文件：1vi /etc/sysconfig/docker 把OPTIONS一行改为：1OPTIONS='--selinux-enabled=false --log-driver=journald --signature-verification=false' 按下“Esc”，输入“：”加“wq”保存退出vim编辑模式，再启动：1service docker start 就行了。 补充：123查看版本： docker -v开机启动docker： systemctl enable docker 停止docker： systemctl stop docker]]></content>
@@ -16,8 +24,8 @@
         <category>NexT</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
         <tag>NexT</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -28,8 +36,8 @@
         <category>NexT</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
         <tag>NexT</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -40,8 +48,8 @@
         <category>NexT</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
         <tag>NexT</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -94,7 +102,7 @@
   <entry>
     <title><![CDATA[解决不蒜子统计不可用问题]]></title>
     <url>%2Farchives%2F8f7c4fe6.html</url>
-    <content type="text"><![CDATA[10月份开始引用不蒜子作为静态网站的博客的统计功能都无法显示了，刚开始我还以为是网络原因，无法响应导致的。但是上不蒜子的官网看了一下，才知道，原来不蒜子的域名更改了，导致script引用不了，从而无法进行统计。 var ap = new APlayer({ element: document.getElementById("aplayer-bVgMBmJU"), narrow: false, autoplay: false, showlrc: 2, music: { title: "Way Back Home", author: "SHAUN", url: "//music.163.com/song/media/outer/url?id=863046037.mp3", pic: "//p1.music.126.net/MAkLvm2p9LE0mWLEr2NkMA==/109951163378634466.jpg?param=130y130", } }); window.aplayers || (window.aplayers = []); window.aplayers.push(ap); 下面是不蒜子的官方公告： 123456大家好，因七牛强制过期原有的『dn-lbstatics.qbox.me』域名（预计2018年10月初），与客服沟通数次无果，即使我提出为此付费也不行，只能更换域名到『busuanzi.ibruce.info』！因我是最早的一批七牛用户，为七牛至少带来了数百个邀请用户，很痛心，很无奈！各位继续使用不蒜子提供的服务，只需把原有的：&lt;script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"&gt;&lt;/script&gt;域名改一下即可：&lt;script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"&gt;&lt;/script&gt;只需要修改该js域名，其他均未改变。若有疑问，可以加入不蒜子交流QQ群：`419260983`，对您带来的不便，非常抱歉！！！还是那句话，不蒜子不会中断服务！！！！ 因此，想要继续使用不蒜子功能，只能修改NexT的配置了。 只需要将 ..\next\layout_third-party\analytics下的 busuanzi-counter.swig修改成不蒜子新的域名就可以正常显示了 例子： 1&lt;script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"&gt;&lt;/script&gt; 将上面的代码替换成下面的代码即可： 1&lt;script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"&gt;&lt;/script&gt;]]></content>
+    <content type="text"><![CDATA[10月份开始引用不蒜子作为静态网站的博客的统计功能都无法显示了，刚开始我还以为是网络原因，无法响应导致的。但是上不蒜子的官网看了一下，才知道，原来不蒜子的域名更改了，导致script引用不了，从而无法进行统计。 var ap = new APlayer({ element: document.getElementById("aplayer-NpZievFF"), narrow: false, autoplay: false, showlrc: 2, music: { title: "Way Back Home", author: "SHAUN", url: "//music.163.com/song/media/outer/url?id=863046037.mp3", pic: "//p1.music.126.net/MAkLvm2p9LE0mWLEr2NkMA==/109951163378634466.jpg?param=130y130", } }); window.aplayers || (window.aplayers = []); window.aplayers.push(ap); 下面是不蒜子的官方公告： 大家好，因七牛强制过期原有的『dn-lbstatics.qbox.me』域名（预计2018年10月初），与客服沟通数次无果，即使我提出为此付费也不行，只能更换域名到『busuanzi.ibruce.info』！因我是最早的一批七牛用户，为七牛至少带来了数百个邀请用户，很痛心，很无奈！各位继续使用不蒜子提供的服务，只需把原有的：&lt;script async src=&quot;//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;域名改一下即可：&lt;script async src=&quot;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;只需要修改该js域名，其他均未改变。若有疑问，可以加入不蒜子交流QQ群：419260983，对您带来的不便，非常抱歉！！！还是那句话，不蒜子不会中断服务！！！！ 因此，想要继续使用不蒜子功能，只能修改NexT的配置了。 只需要将 ..\next\layout_third-party\analytics下的 busuanzi-counter.swig修改成不蒜子新的域名就可以正常显示了 例子： 1&lt;script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"&gt;&lt;/script&gt; 将上面的代码替换成下面的代码即可： 1&lt;script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"&gt;&lt;/script&gt;]]></content>
       <categories>
         <category>hexo</category>
       </categories>
@@ -130,8 +138,8 @@
         <category>NexT</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
         <tag>NexT</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -143,8 +151,8 @@
         <category>hexo</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
         <tag>NexT</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -172,8 +180,8 @@
         <category>hexo</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
         <tag>NexT</tag>
+        <tag>hexo</tag>
         <tag>随笔</tag>
       </tags>
   </entry>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.donlex.cn/"/>
-  <updated>2019-02-03T09:02:56.875Z</updated>
+  <updated>2019-02-25T05:10:10.246Z</updated>
   <id>https://www.donlex.cn/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>爬取猫眼评论，分析《阿丽塔：战斗天使》</title>
+    <link href="https://www.donlex.cn/archives/f7b23e1a.html"/>
+    <id>https://www.donlex.cn/archives/f7b23e1a.html</id>
+    <published>2019-02-25T05:03:13.000Z</published>
+    <updated>2019-02-25T05:10:10.246Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote><p>文章首发于<a href="http://www.imooc.com/article/279957" target="_blank" rel="noopener">慕课网</a></p></blockquote><p>日本漫画《铳梦》改编电影《阿丽塔：战斗天使（Alita: Battle Angel）》于2019年2月22日在中国大陆上映了。近几天，网上对于这部电影的分析评论也很多，今天通过猫眼电影上的评论粗浅地看一下大众对这部科幻电影的评价。</p><a id="more"></a><p><img src="https://i.loli.net/2019/02/25/5c737831a3806.jpg" alt="webwxgetmsgimg (7).jpg"></p><h3 id="工具库"><a href="#工具库" class="headerlink" title="工具库"></a>工具库</h3><ul><li>jieba</li><li>pyecharts</li><li>wordcloud</li><li>matplotlib</li></ul><h3 id="分析网站"><a href="#分析网站" class="headerlink" title="分析网站"></a>分析网站</h3><p>通过在浏览器模拟移动端请求评论的数据，可以看到随着页面的更改url并没有发生变化，初步判断该网页是通过js加载的，通过多次的实践，找到了请求返回的真实url和关键参数，这里返回的是json格式的数据，里面有我们需要的信息。</p><p><img src="https://i.loli.net/2019/02/25/5c7377c7543eb.png" alt="1.PNG"></p><p>通过比较多次请求信息，发现以下的参数</p><p><img src="https://i.loli.net/2019/02/25/5c7377e2dfede.png" alt="参数.PNG"></p><p>其中，<code>offset</code>是每次请求的起始评论条数；<code>limit</code>是每次请求的条数；<code>ts</code>我猜测应该是时间戳，不用管它</p><h3 id="抓取信息"><a href="#抓取信息" class="headerlink" title="抓取信息"></a>抓取信息</h3><p>通过返回的json数据，选取其中的<code>content</code>,<code>score</code>,<code>nick</code> ,<code>gender</code>这四个参数，将这些信息写入一个文本中保存起来。</p><p><img src="https://i.loli.net/2019/02/25/5c7377f052fb9.png" alt="评论.PNG"></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_comments</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="string">'''</span></span><br><span class="line"><span class="string">    爬取评论信息</span></span><br><span class="line"><span class="string">    :return:</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">14352</span>, <span class="number">15</span>):</span><br><span class="line">        URL = self.url.format(i)</span><br><span class="line">        data = requests.get(url=URL, headers=self.header)</span><br><span class="line">        time.sleep(random.random() * <span class="number">3</span>)</span><br><span class="line">        com = json.loads(data.text)</span><br><span class="line">        comments = com[<span class="string">'data'</span>][<span class="string">'comments'</span>]</span><br><span class="line">        <span class="keyword">if</span> comments:</span><br><span class="line">            <span class="keyword">for</span> item <span class="keyword">in</span> comments:</span><br><span class="line">                data = &#123;</span><br><span class="line">                    <span class="string">'content'</span>: item[<span class="string">'content'</span>],</span><br><span class="line">                    <span class="string">'score'</span>: item[<span class="string">'score'</span>],</span><br><span class="line">                    <span class="string">'nick'</span>: item[<span class="string">'nick'</span>],</span><br><span class="line">                    <span class="string">'gender'</span>: item[<span class="string">'gender'</span>],</span><br><span class="line">                &#125;</span><br><span class="line">                print(data)</span><br><span class="line">                <span class="comment"># 存入文本中</span></span><br><span class="line">                <span class="keyword">with</span> open(<span class="string">'comments.txt'</span>, <span class="string">'a+'</span>, encoding=<span class="string">'UTF-8'</span>) <span class="keyword">as</span> file:</span><br><span class="line">                    file.writelines(</span><br><span class="line">                        json.dumps(data, ensure_ascii=<span class="keyword">False</span>) + <span class="string">'\n'</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br></pre></td></tr></table></figure><h3 id="数据分析"><a href="#数据分析" class="headerlink" title="数据分析"></a>数据分析</h3><p>由于爬取的数据都是比较规整，并且没有选择太多的特征，所以就跳过清洗阶段，直接进行分析。为了便于观察，这里使用pyecharts进行可视化处理。</p><h4 id="1-评论词云"><a href="#1-评论词云" class="headerlink" title="1. 评论词云"></a>1. 评论词云</h4><p>通过词云，能够一目了然地知道这些精选评论都说了些什么。由于使用pyecharts制作词云需要比较繁琐的处理，所以直接使用<code>jieba</code>分词并用<code>WordCloud</code>进行制作词云。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_wordcloud</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">'''</span></span><br><span class="line"><span class="string">        制作词云图</span></span><br><span class="line"><span class="string">        :return:</span></span><br><span class="line"><span class="string">        '''</span></span><br><span class="line">        text = self.get_context()</span><br><span class="line">        seg_list = jieba.cut(text, cut_all=<span class="keyword">True</span>)</span><br><span class="line">        wc = WordCloud(background_color=<span class="string">"#CCC"</span>,  <span class="comment"># 设置背景颜色</span></span><br><span class="line">                       <span class="comment"># mask = pic , #设置背景图片</span></span><br><span class="line">                       max_words=<span class="number">2000</span>,  <span class="comment"># 设置最大显示的字数</span></span><br><span class="line">                       margin=<span class="number">5</span>,</span><br><span class="line">                       font_path=<span class="string">"C:\\Windows\\Fonts\\STFANGSO.ttf"</span>,  <span class="comment"># 不加这一句显示口字形乱码</span></span><br><span class="line">                       max_font_size=<span class="number">80</span>,  <span class="comment"># 设置字体最大值</span></span><br><span class="line">                       random_state=<span class="number">40</span>,  <span class="comment"># 设置有多少种随机生成状态，即有多少种配色方案</span></span><br><span class="line">                       )</span><br><span class="line">        w1 = <span class="string">"/ "</span>.join(seg_list)  <span class="comment"># 全模式</span></span><br><span class="line">        mword = wc.generate(w1)</span><br><span class="line">        plt.imshow(mword)</span><br><span class="line">        plt.axis(<span class="string">"off"</span>)</span><br><span class="line">        plt.savefig(<span class="string">'wordcloud.png'</span>)  <span class="comment"># 保存图片</span></span><br><span class="line">        plt.show()</span><br></pre></td></tr></table></figure></p><p><img src="https://i.loli.net/2019/02/25/5c73780363c33.png" alt="wordcloud.png"></p><p>可以看到，“好看”，“特效”，“第二部”，“剧情”，这几个词都是出现比较多次的，再通过去原来保存评论信息的文本中查询，这些词的整个评论，我发现很多人都是在说电影没有结局，或者期待出第二部的。</p><h4 id="2-性别比例"><a href="#2-性别比例" class="headerlink" title="2.性别比例"></a>2.性别比例</h4><p>由于爬取到的性别都是使用数字0，1,2进行标识的，所以按照程序员的思维。我就用 0代表男，1代表女，2代表未知来进行处理了。<br><img src="https://i.loli.net/2019/02/25/5c73780d34505.png" alt="性别环形图.png"></p><p>从图中可以看出，评论以男性居多，约占总数的50%，估计是男同胞们对这类比较抽象，充满想象的电影比较感兴趣吧~</p><h4 id="3-评分情况"><a href="#3-评分情况" class="headerlink" title="3.评分情况"></a>3.评分情况</h4><p>从猫眼的总评分9.0来看，这部电影还是比较不错的，截止2月24日已经在中国拿下了39510万元的票房。</p><p><img src="https://i.loli.net/2019/02/25/5c737816de932.png" alt="评分柱状图.png"></p><p>通过上图，可以清楚地看到，大部分的评分都是8-10分的，所以总评的9.0也是有依据的。</p><h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>虽然这部电影一些的情节都没有介绍清楚，但是很多的战斗细节都用特效展现的淋漓尽致。据说全片特效渲染动用了30000台电脑，总耗时4.32亿小时，这也是国内的“五毛钱”特效所不能比拟的。</p><p>最后来看下这部片的女主吧！</p><p><img src="https://i.loli.net/2019/02/25/5c73782db6170.jpg" alt="位图.jpg"></p><h3 id="附"><a href="#附" class="headerlink" title="附"></a>附</h3><p>源码传送门： <strong><a href="https://github.com/stormdony/python_demo/tree/master/MaoYan_Alita_Battle_Angel" target="_blank" rel="noopener">https://github.com/stormdony/python_demo/tree/master/MaoYan_Alita_Battle_Angel</a></strong></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;文章首发于&lt;a href=&quot;http://www.imooc.com/article/279957&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;慕课网&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;日本漫画《铳梦》改编电影《阿丽塔：战斗天使（Alita: Battle Angel）》于2019年2月22日在中国大陆上映了。近几天，网上对于这部电影的分析评论也很多，今天通过猫眼电影上的评论粗浅地看一下大众对这部科幻电影的评价。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="python" scheme="https://www.donlex.cn/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>解决CentOS启动docker失败</title>
@@ -59,9 +82,9 @@
       <category term="NexT" scheme="https://www.donlex.cn/categories/NexT/"/>
     
     
-      <category term="hexo" scheme="https://www.donlex.cn/tags/hexo/"/>
-    
       <category term="NexT" scheme="https://www.donlex.cn/tags/NexT/"/>
+    
+      <category term="hexo" scheme="https://www.donlex.cn/tags/hexo/"/>
     
   </entry>
   
@@ -87,9 +110,9 @@
       <category term="NexT" scheme="https://www.donlex.cn/categories/NexT/"/>
     
     
-      <category term="hexo" scheme="https://www.donlex.cn/tags/hexo/"/>
-    
       <category term="NexT" scheme="https://www.donlex.cn/tags/NexT/"/>
+    
+      <category term="hexo" scheme="https://www.donlex.cn/tags/hexo/"/>
     
   </entry>
   
@@ -112,9 +135,9 @@
       <category term="NexT" scheme="https://www.donlex.cn/categories/NexT/"/>
     
     
-      <category term="hexo" scheme="https://www.donlex.cn/tags/hexo/"/>
-    
       <category term="NexT" scheme="https://www.donlex.cn/tags/NexT/"/>
+    
+      <category term="hexo" scheme="https://www.donlex.cn/tags/hexo/"/>
     
   </entry>
   
@@ -234,19 +257,19 @@
     <link href="https://www.donlex.cn/archives/8f7c4fe6.html"/>
     <id>https://www.donlex.cn/archives/8f7c4fe6.html</id>
     <published>2018-10-09T03:30:44.000Z</published>
-    <updated>2019-02-07T03:34:45.037Z</updated>
+    <updated>2019-02-20T10:53:36.760Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>10月份开始引用不蒜子作为静态网站的博客的统计功能都无法显示了，刚开始我还以为是网络原因，无法响应导致的。但是上<a href="http://busuanzi.ibruce.info/" target="_blank" rel="noopener">不蒜子</a>的官网看了一下，才知道，原来<a href="http://busuanzi.ibruce.info/" target="_blank" rel="noopener">不蒜子</a>的域名更改了，导致<code>script</code>引用不了，从而无法进行统计。</p><div id="aplayer-bVgMBmJU" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;"><pre class="aplayer-lrc-content"></pre></div><script>var ap = new APlayer({element: document.getElementById("aplayer-bVgMBmJU"),narrow: false,autoplay: false,showlrc: 2,music: {title: "Way Back Home",author: "SHAUN",url: "//music.163.com/song/media/outer/url?id=863046037.mp3",pic: "//p1.music.126.net/MAkLvm2p9LE0mWLEr2NkMA==/109951163378634466.jpg?param=130y130",}});window.aplayers || (window.aplayers = []);window.aplayers.push(ap);</script><a id="more"></a><p>下面是不蒜子的官方公告：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">大家好，因七牛强制过期原有的『dn-lbstatics.qbox.me』域名（预计<span class="number">2018</span>年<span class="number">10</span>月初），与客服沟通数次无果，即使我提出为此付费也不行，只能更换域名到『busuanzi.ibruce.info』！因我是最早的一批七牛用户，为七牛至少带来了数百个邀请用户，很痛心，很无奈！</span><br><span class="line">各位继续使用不蒜子提供的服务，只需把原有的：</span><br><span class="line">&lt;script <span class="keyword">async</span> src=<span class="string">"//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">域名改一下即可：</span><br><span class="line">&lt;script <span class="keyword">async</span> src=<span class="string">"//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">只需要修改该js域名，其他均未改变。若有疑问，可以加入不蒜子交流QQ群：<span class="string">`419260983`</span>，对您带来的不便，非常抱歉！！！还是那句话，不蒜子不会中断服务！！！！</span><br></pre></td></tr></table></figure><p>因此，想要继续使用不蒜子功能，只能修改NexT的配置了。</p><p>只需要将 <strong>..\next\layout_third-party\analytics</strong>下的 <strong>busuanzi-counter.swig</strong>修改成不蒜子新的域名就可以正常显示了</p><p>例子：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script <span class="keyword">async</span> src=<span class="string">"//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure><p>将上面的代码替换成下面的代码即可：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script <span class="keyword">async</span> src=<span class="string">"//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>10月份开始引用不蒜子作为静态网站的博客的统计功能都无法显示了，刚开始我还以为是网络原因，无法响应导致的。但是上<a href="http://busuanzi.ibruce.info/" target="_blank" rel="noopener">不蒜子</a>的官网看了一下，才知道，原来<a href="http://busuanzi.ibruce.info/" target="_blank" rel="noopener">不蒜子</a>的域名更改了，导致<code>script</code>引用不了，从而无法进行统计。</p><div id="aplayer-NpZievFF" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;"><pre class="aplayer-lrc-content"></pre></div><script>var ap = new APlayer({element: document.getElementById("aplayer-NpZievFF"),narrow: false,autoplay: false,showlrc: 2,music: {title: "Way Back Home",author: "SHAUN",url: "//music.163.com/song/media/outer/url?id=863046037.mp3",pic: "//p1.music.126.net/MAkLvm2p9LE0mWLEr2NkMA==/109951163378634466.jpg?param=130y130",}});window.aplayers || (window.aplayers = []);window.aplayers.push(ap);</script><a id="more"></a><p>下面是不蒜子的官方公告：</p><blockquote><p>大家好，因七牛强制过期原有的『dn-lbstatics.qbox.me』域名（预计2018年10月初），与客服沟通数次无果，即使我提出为此付费也不行，只能更换域名到『busuanzi.ibruce.info』！因我是最早的一批七牛用户，为七牛至少带来了数百个邀请用户，很痛心，很无奈！<br>各位继续使用不蒜子提供的服务，只需把原有的：<br><code>&lt;script async src=&quot;//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</code><br>域名改一下即可：<br><code>&lt;script async src=&quot;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</code><br>只需要修改该js域名，其他均未改变。若有疑问，可以加入不蒜子交流QQ群：<code>419260983</code>，对您带来的不便，非常抱歉！！！还是那句话，不蒜子不会中断服务！！！！</p></blockquote><p>因此，想要继续使用不蒜子功能，只能修改NexT的配置了。</p><p>只需要将 <strong>..\next\layout_third-party\analytics</strong>下的 <strong>busuanzi-counter.swig</strong>修改成不蒜子新的域名就可以正常显示了</p><p>例子：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script <span class="keyword">async</span> src=<span class="string">"//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure><p>将上面的代码替换成下面的代码即可：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script <span class="keyword">async</span> src=<span class="string">"//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
       &lt;p&gt;10月份开始引用不蒜子作为静态网站的博客的统计功能都无法显示了，刚开始我还以为是网络原因，无法响应导致的。但是上&lt;a href=&quot;http://busuanzi.ibruce.info/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;不蒜子&lt;/a&gt;的官网看了一下，才知道，原来&lt;a href=&quot;http://busuanzi.ibruce.info/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;不蒜子&lt;/a&gt;的域名更改了，导致&lt;code&gt;script&lt;/code&gt;引用不了，从而无法进行统计。&lt;/p&gt;
-&lt;div id=&quot;aplayer-bVgMBmJU&quot; class=&quot;aplayer aplayer-tag-marker&quot; style=&quot;margin-bottom: 20px;&quot;&gt;
+&lt;div id=&quot;aplayer-NpZievFF&quot; class=&quot;aplayer aplayer-tag-marker&quot; style=&quot;margin-bottom: 20px;&quot;&gt;
 				&lt;pre class=&quot;aplayer-lrc-content&quot;&gt;&lt;/pre&gt;
 			&lt;/div&gt;
 			&lt;script&gt;
 				var ap = new APlayer({
-					element: document.getElementById(&quot;aplayer-bVgMBmJU&quot;),
+					element: document.getElementById(&quot;aplayer-NpZievFF&quot;),
 					narrow: false,
 					autoplay: false,
 					showlrc: 2,
@@ -333,9 +356,9 @@
       <category term="NexT" scheme="https://www.donlex.cn/categories/NexT/"/>
     
     
-      <category term="hexo" scheme="https://www.donlex.cn/tags/hexo/"/>
-    
       <category term="NexT" scheme="https://www.donlex.cn/tags/NexT/"/>
+    
+      <category term="hexo" scheme="https://www.donlex.cn/tags/hexo/"/>
     
   </entry>
   
@@ -360,9 +383,9 @@
       <category term="hexo" scheme="https://www.donlex.cn/categories/NexT/hexo/"/>
     
     
-      <category term="hexo" scheme="https://www.donlex.cn/tags/hexo/"/>
-    
       <category term="NexT" scheme="https://www.donlex.cn/tags/NexT/"/>
+    
+      <category term="hexo" scheme="https://www.donlex.cn/tags/hexo/"/>
     
   </entry>
   
@@ -419,9 +442,9 @@
       <category term="hexo" scheme="https://www.donlex.cn/categories/%E9%9A%8F%E7%AC%94/NexT/hexo/"/>
     
     
-      <category term="hexo" scheme="https://www.donlex.cn/tags/hexo/"/>
-    
       <category term="NexT" scheme="https://www.donlex.cn/tags/NexT/"/>
+    
+      <category term="hexo" scheme="https://www.donlex.cn/tags/hexo/"/>
     
       <category term="随笔" scheme="https://www.donlex.cn/tags/%E9%9A%8F%E7%AC%94/"/>
     
@@ -493,33 +516,6 @@
       &lt;h4 id=&quot;1-安装-hexo-wordcount&quot;&gt;&lt;a href=&quot;#1-安装-hexo-wordcount&quot; class=&quot;headerlink&quot; title=&quot;1.安装 hexo-wordcount&quot;&gt;&lt;/a&gt;1.安装 hexo-wordcount&lt;/h4&gt;&lt;p&gt;在博客目录下打开Git Bash Here 输入命令&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;npm i –save hexo-wordcount&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="yilia" scheme="https://www.donlex.cn/categories/yilia/"/>
-    
-    
-      <category term="hexo" scheme="https://www.donlex.cn/tags/hexo/"/>
-    
-      <category term="yilia" scheme="https://www.donlex.cn/tags/yilia/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo添加和取消live2d看板动画</title>
-    <link href="https://www.donlex.cn/archives/14d1161.html"/>
-    <id>https://www.donlex.cn/archives/14d1161.html</id>
-    <published>2018-09-09T06:31:09.000Z</published>
-    <updated>2018-09-14T04:09:53.333Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="添加看板娘"><a href="#添加看板娘" class="headerlink" title="添加看板娘"></a>添加看板娘</h3><p>在博客目录下安装依赖</p><blockquote><p>npm install –save hexo-helper-live2d</p></blockquote><a id="more"></a><p>在主题下的<code>_config.yml</code>的配置信息<br>Hexo的 _config.yml 文件添加配置.</p><p>示例:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">live2d:</span><br><span class="line">  enable: true</span><br><span class="line">  scriptFrom: local</span><br><span class="line">  pluginRootPath: live2dw/</span><br><span class="line">  pluginJsPath: lib/</span><br><span class="line">  pluginModelPath: assets/</span><br><span class="line">  tagMode: false</span><br><span class="line">  debug: false</span><br><span class="line">  model:</span><br><span class="line">    use: live2d-widget-model-wanko</span><br><span class="line">  display:</span><br><span class="line">    position: right</span><br><span class="line">    width: <span class="number">150</span></span><br><span class="line">    height: <span class="number">300</span></span><br><span class="line">  mobile:</span><br><span class="line">    show: false</span><br></pre></td></tr></table></figure></p><p>使用其他的模型，需要先安装模型,在修改配置信息中的<code>use</code></p><p>查看模型：<a href="https://github.com/xiazeyu/live2d-widget-models" target="_blank" rel="noopener">https://github.com/xiazeyu/live2d-widget-models</a></p><p>截图预览：<a href="https://huaji8.top/post/live2d-plugin-2.0/" target="_blank" rel="noopener">https://huaji8.top/post/live2d-plugin-2.0/</a></p><p>安装模型</p><blockquote><p>npm install 模型的包名</p></blockquote><p>具体可以查看官方文档：<a href="https://github.com/EYHN/hexo-helper-live2d/blob/master/README.zh-CN.md" target="_blank" rel="noopener">https://github.com/EYHN/hexo-helper-live2d/blob/master/README.zh-CN.md</a></p><h3 id="取消看板娘"><a href="#取消看板娘" class="headerlink" title="取消看板娘"></a>取消看板娘</h3><p>直接运行下面的命令</p><blockquote><p>npm uninstall hexo-helper-live2d</p></blockquote><p>去掉站点<code>_config.yml</code>下的配置信息即可</p><blockquote><p>ps：原创文章，转载请注明出处</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;添加看板娘&quot;&gt;&lt;a href=&quot;#添加看板娘&quot; class=&quot;headerlink&quot; title=&quot;添加看板娘&quot;&gt;&lt;/a&gt;添加看板娘&lt;/h3&gt;&lt;p&gt;在博客目录下安装依赖&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;npm install –save hexo-helper-live2d&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
