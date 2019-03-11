@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.donlex.cn/about/index.html</loc>
+    
+    <lastmod>2019-03-11T09:34:29.342Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.donlex.cn/archives/5e164287.html</loc>
     
     <lastmod>2019-03-11T08:00:08.249Z</lastmod>
@@ -89,13 +96,6 @@
     <loc>https://www.donlex.cn/archives/eea56fba.html</loc>
     
     <lastmod>2018-11-06T13:06:52.184Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.donlex.cn/about/index.html</loc>
-    
-    <lastmod>2018-10-12T11:42:22.850Z</lastmod>
     
   </url>
   
